@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Blogs" representedClassName="Blogs" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar_old" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatarImage" optional="YES" attributeType="Transformable" customClassName="NSData" storedInTruthFile="YES" syncable="YES"/>
+        <attribute name="blogDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="blogUpdated" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="needLoad" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="postsCount" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="primary" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="total_posts" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="type" attributeType="String" defaultValueString="public" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Posts" inverseName="blog" inverseEntity="Posts" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="blogs" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Photos" representedClassName="Photos" syncable="YES" codeGenerationType="class">
+        <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="original" optional="YES" attributeType="Transformable" customClassName="NSData" syncable="YES"/>
+        <attribute name="original_height" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="original_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="original_width" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumb" optional="YES" attributeType="Transformable" customClassName="NSData" syncable="YES"/>
+        <attribute name="thumb_height" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="thumb_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="thumb_width" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="post" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Posts" inverseName="photos" inverseEntity="Posts" syncable="YES"/>
+    </entity>
+    <entity name="Posts" representedClassName="Posts" syncable="YES" codeGenerationType="class">
+        <attribute name="blog_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="caption" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="format" attributeType="String" defaultValueString="html" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="liked" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="needLoad" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notes_count" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="post_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="source_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" attributeType="String" defaultValueString="published" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="blog" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Blogs" inverseName="posts" inverseEntity="Blogs" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photos" inverseName="post" inverseEntity="Photos" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="timestamp"/>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
+        <attribute name="default_post_format" attributeType="String" defaultValueString="html" syncable="YES"/>
+        <attribute name="following" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="likes" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="blogs" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Blogs" inverseName="user" inverseEntity="Blogs" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Blogs" positionX="-54" positionY="18" width="128" height="270"/>
+        <element name="Photos" positionX="-18" positionY="162" width="128" height="195"/>
+        <element name="Posts" positionX="-36" positionY="90" width="128" height="300"/>
+        <element name="Users" positionX="-63" positionY="-18" width="128" height="30"/>
+    </elements>
+</model>

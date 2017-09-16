@@ -1,24 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="Vph-IX-0IF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
+        </array>
+        <array key="HelveticaNeueExtras.ttc">
+            <string>HelveticaNeue-CondensedBold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Photos-->
+        <scene sceneID="Vwp-UX-JEC">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController storyboardIdentifier="FeedViewController" id="LVw-r8-HIF" customClass="FeedListViewController" customModule="TumbView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UD5-eX-DlN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3by-yL-xqV">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="pOJ-pV-6Lo">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="LVw-r8-HIF" id="BhE-Kp-Cv7"/>
+                            <outlet property="delegate" destination="LVw-r8-HIF" id="X7u-WT-833"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Photos" id="wXd-kY-zgC">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xDv-LB-2b9"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQk-KA-9zi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="510.5" y="62.5"/>
+        </scene>
+        <!--Splash Screen View Controller-->
+        <scene sceneID="ILF-Hm-eXp">
+            <objects>
+                <viewController storyboardIdentifier="SplashScreen" id="0fe-Pk-dP3" customClass="SplashScreenViewController" customModule="TumbView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3OF-wZ-vuG"/>
+                        <viewControllerLayoutGuide type="bottom" id="QsG-3N-Kjr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DlE-ZH-XqS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="ktp-0V-C4C">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an0-vu-v0s">
+                                <rect key="frame" x="16" y="597" width="343" height="54"/>
+                                <color key="backgroundColor" red="0.0" green="0.6705882353" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="56U-so-T7V"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="400" id="H7n-iG-aM8"/>
+                                    <constraint firstAttribute="width" priority="750" constant="400" id="IBj-Hy-FWa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Viewer" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvE-1a-Hb1">
+                                <rect key="frame" x="108.5" y="165" width="158" height="37.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.24313725489999999" green="0.3294117647" blue="0.41568627450000001" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="2" height="2"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_large" translatesAutoresizingMaskIntoConstraints="NO" id="vwn-7K-paq">
+                                <rect key="frame" x="112.5" y="113" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="LcP-Uu-ZxS"/>
+                                    <constraint firstAttribute="height" constant="50" id="XwL-YA-0Fw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="an0-vu-v0s" firstAttribute="centerX" secondItem="DlE-ZH-XqS" secondAttribute="centerX" id="5Bn-Ge-1fT"/>
+                            <constraint firstAttribute="bottom" secondItem="ktp-0V-C4C" secondAttribute="bottom" id="IUa-UE-IRm"/>
+                            <constraint firstItem="ktp-0V-C4C" firstAttribute="leading" secondItem="DlE-ZH-XqS" secondAttribute="leading" id="P4h-jb-Z6I"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="an0-vu-v0s" secondAttribute="trailing" priority="750" id="ZOA-es-T3N"/>
+                            <constraint firstItem="QsG-3N-Kjr" firstAttribute="top" secondItem="an0-vu-v0s" secondAttribute="bottom" constant="16" id="crQ-uz-rpL"/>
+                            <constraint firstItem="EvE-1a-Hb1" firstAttribute="centerY" secondItem="DlE-ZH-XqS" secondAttribute="centerY" priority="750" constant="-150" id="eUq-A6-9z3"/>
+                            <constraint firstItem="ktp-0V-C4C" firstAttribute="top" secondItem="DlE-ZH-XqS" secondAttribute="top" id="g67-pz-ccW"/>
+                            <constraint firstItem="vwn-7K-paq" firstAttribute="centerX" secondItem="EvE-1a-Hb1" secondAttribute="centerX" id="jvp-cZ-sia"/>
+                            <constraint firstAttribute="trailing" secondItem="ktp-0V-C4C" secondAttribute="trailing" id="oto-sJ-muT"/>
+                            <constraint firstItem="an0-vu-v0s" firstAttribute="leading" secondItem="DlE-ZH-XqS" secondAttribute="leadingMargin" priority="750" id="owR-DG-Q4X"/>
+                            <constraint firstItem="EvE-1a-Hb1" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3OF-wZ-vuG" secondAttribute="bottom" constant="100" id="rXz-MP-yR0"/>
+                            <constraint firstItem="EvE-1a-Hb1" firstAttribute="top" secondItem="vwn-7K-paq" secondAttribute="bottom" constant="2" id="tDH-KG-LQ6"/>
+                            <constraint firstItem="EvE-1a-Hb1" firstAttribute="centerX" secondItem="DlE-ZH-XqS" secondAttribute="centerX" id="yll-TO-eAM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="ktp-0V-C4C" id="F4Z-Cb-AP5"/>
+                        <outlet property="signInBtn" destination="an0-vu-v0s" id="IPP-HT-hMV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcA-5b-XgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.5" y="858.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BrP-5N-mWl">
+            <objects>
+                <navigationController storyboardIdentifier="AppNavController" automaticallyAdjustsScrollViewInsets="NO" id="Vph-IX-0IF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dst-G7-1FI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LVw-r8-HIF" kind="relationship" relationship="rootViewController" id="bcJ-jv-Wba"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wrd-JD-bQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41.25" y="62.25333333333333"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg2" width="1000" height="1000"/>
+        <image name="logo_large" width="232" height="50"/>
+    </resources>
 </document>
