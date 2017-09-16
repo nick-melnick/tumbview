@@ -12,6 +12,7 @@ import RxCocoa
 import NSObject_Rx
 import CoreData
 import ADMozaicCollectionViewLayout
+import PullToRefresh
 
 private let reuseIdentifier = "PhotoCell"
 
@@ -29,6 +30,7 @@ class FeedListViewController: UICollectionViewController {
     fileprivate var landscapeLayout: ADMozaikLayout!
     fileprivate var portraitLayout: ADMozaikLayout!
     
+    fileprivate let refresher = PullToRefresh()
     
     var shouldReloadCollectionView = true
     var blockOperation: BlockOperation!
@@ -44,12 +46,21 @@ class FeedListViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView?.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.addPullToRefresh(refresher, action: { [weak self] in
+            self?.viewModel.getNewPosts({ [weak self] in
+                self?.collectionView?.endRefreshing(at: .top)
+            })
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getNewPosts()
         self.setCollectionViewLayout(animated: true, ofType: view.frame.width > view.frame.height ? .landscape : .portrait)
+    }
+    
+    deinit {
+        collectionView?.removePullToRefresh(collectionView!.topPullToRefresh!)
     }
 
     // MARK: UICollectionViewDataSource
@@ -71,6 +82,10 @@ class FeedListViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectItemIn(collectionView: collectionView, atIndexPath: indexPath)
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

@@ -13,15 +13,16 @@ final class CoreDataStack {
     static let sharedStack = CoreDataStack()
     var errorHandler: (Error) -> Void = {_ in }
     private init() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(mainContextChanged(notification:)),
-                                               name: .NSManagedObjectContextDidSave,
-                                               object: self.managedObjectContext)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(bgContextChanged(notification:)),
-                                               name: .NSManagedObjectContextDidSave,
-                                               object: self.backgroundManagedObjectContext)
+        self.managedObjectContext.parent = self.backgroundManagedObjectContext
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(mainContextChanged(notification:)),
+//                                               name: .NSManagedObjectContextDidSave,
+//                                               object: self.managedObjectContext)
+//
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(bgContextChanged(notification:)),
+//                                               name: .NSManagedObjectContextDidSave,
+//                                               object: self.backgroundManagedObjectContext)
     }
     
     deinit {
@@ -70,7 +71,6 @@ final class CoreDataStack {
     lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
         var mainManagedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        mainManagedObjectContext.persistentStoreCoordinator = coordinator
         return mainManagedObjectContext
     }()
     

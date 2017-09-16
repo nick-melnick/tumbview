@@ -21,7 +21,7 @@
         <!--Photos-->
         <scene sceneID="Vwp-UX-JEC">
             <objects>
-                <collectionViewController storyboardIdentifier="FeedViewController" id="LVw-r8-HIF" customClass="FeedListViewController" customModule="TumbView" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="FeedViewController" automaticallyAdjustsScrollViewInsets="NO" id="LVw-r8-HIF" customClass="FeedListViewController" customModule="TumbView" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UD5-eX-DlN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,10 +55,65 @@
                     <navigationItem key="navigationItem" title="Photos" id="wXd-kY-zgC">
                         <barButtonItem key="backBarButtonItem" title=" " id="xDv-LB-2b9"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="uLA-sq-5h0" kind="push" id="3DD-rp-dXg"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQk-KA-9zi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="510.5" y="62.5"/>
+        </scene>
+        <!--Photo View View Controller-->
+        <scene sceneID="0Vp-pD-Z1U">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uLA-sq-5h0" customClass="PhotoViewViewController" customModule="TumbView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ccw-ri-2dX"/>
+                        <viewControllerLayoutGuide type="bottom" id="nMg-nd-508"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2L5-UK-zMY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" minimumZoomScale="0.10000000000000001" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="Iv6-KE-9FH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-ZQ-Udf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Seb-ZQ-Udf" firstAttribute="top" secondItem="Iv6-KE-9FH" secondAttribute="top" id="H5f-ky-SAk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Seb-ZQ-Udf" secondAttribute="bottom" id="WPJ-c5-Hhe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Seb-ZQ-Udf" secondAttribute="trailing" id="jjA-nS-eaf"/>
+                                    <constraint firstItem="Seb-ZQ-Udf" firstAttribute="leading" secondItem="Iv6-KE-9FH" secondAttribute="leading" id="yPG-WD-Zb9"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="uLA-sq-5h0" id="edw-2Z-2iJ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Iv6-KE-9FH" firstAttribute="top" secondItem="2L5-UK-zMY" secondAttribute="top" id="4iu-bi-5zl"/>
+                            <constraint firstAttribute="trailing" secondItem="Iv6-KE-9FH" secondAttribute="trailing" id="aWB-qr-NXJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Iv6-KE-9FH" secondAttribute="bottom" id="dlw-wx-vDf"/>
+                            <constraint firstItem="Iv6-KE-9FH" firstAttribute="leading" secondItem="2L5-UK-zMY" secondAttribute="leading" id="yZN-kf-fvv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Io5-xI-0sE"/>
+                    <connections>
+                        <outlet property="imageView" destination="Seb-ZQ-Udf" id="MTZ-8S-gcZ"/>
+                        <outlet property="imageViewBottomConstraint" destination="WPJ-c5-Hhe" id="5Vk-FR-TCn"/>
+                        <outlet property="imageViewLeadingConstraint" destination="yPG-WD-Zb9" id="Kk0-Ri-YtD"/>
+                        <outlet property="imageViewTopConstraint" destination="H5f-ky-SAk" id="ICL-OO-kyn"/>
+                        <outlet property="imageViewTrailingConstraint" destination="jjA-nS-eaf" id="tD3-re-0PE"/>
+                        <outlet property="scrollView" destination="Iv6-KE-9FH" id="4cf-nY-OTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xkG-jh-GVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="62"/>
         </scene>
         <!--Splash Screen View Controller-->
         <scene sceneID="ILF-Hm-eXp">

@@ -75,7 +75,6 @@ class SplashScreenViewController: UIViewController {
     // MARK: - Navigation
     
     fileprivate func authorizationResult(_ result: OAuthSwiftCredential) {
-        print(result)
         coodrinator.successfulAuthorization()
     }
     

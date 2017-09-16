@@ -57,15 +57,20 @@ class FeedListViewModel: NSObject {
         let cellViewModel = PhotoCellViewModel(photo: photo)
         return cellViewModel.cellInstance(collectionView, indexPath: indexPath)
     }
+    
+    func didSelectItemIn(collectionView: UICollectionView, atIndexPath indexPath: IndexPath) {
+        let photo = fetchController.object(at: indexPath)
+        coordinator.showPhoto(photo)
+    }
 
     // MARK: - Get New data
     
     /// Get new post in dashboard in background context
-    func getNewPosts() {
+    func getNewPosts(_ completion:(()->())? = nil) {
         let updateContext = CoreDataStack.sharedStack.backgroundManagedObjectContext
         getPostsRequest()
             .subscribe(onSuccess: { (posts) in
-                updateContext.perform {
+                updateContext.perform { [weak self] in
                     let foundedPosts: [Posts]
                     do {
                         foundedPosts = try updateContext.fetch(Posts.fetchRequest())
@@ -83,28 +88,24 @@ class FeedListViewModel: NSObject {
                         post.updateFromJSON(postJSON)
                     }
                     if updateContext.hasChanges {
-                        if updateContext.insertedObjects.count > 0 {
-                            print("Inserted: \(updateContext.insertedObjects.count)")
-                        }
-                        if updateContext.updatedObjects.count > 0 {
-                            print("Updated: \(updateContext.updatedObjects.count)")
-                        }
-                        if updateContext.deletedObjects.count > 0 {
-                            print("Deleted: \(updateContext.deletedObjects.count)")
-                        }
                         do {
                             try updateContext.save()
+                            self?.refreshData()
                         } catch let error as NSError {
                             print(error)
                         }
                     }
+                    completion?()
                 }
             }, onError: { error in
-                
+                completion?()
             })
             .addDisposableTo(disposeBag)
     }
     
+    fileprivate func refreshData() {
+        try? fetchController.performFetch()
+    }
     
     /// Request posts from dashboard
     ///

@@ -34,6 +34,7 @@ extension Posts {
                     photo = founded
                 } else {
                     photo = NSEntityDescription.insertNewObject(forEntityName: "Photos", into: self.managedObjectContext!) as! Photos
+                    addToPhotos(photo)
                 }
                 photo.updateFromJSON(photoJSON)
             }

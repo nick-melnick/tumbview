@@ -30,4 +30,9 @@ class FeedListCoordinator: Coordinator {
         }
     }
     
+    func showPhoto(_ photo: Photos) {
+        let coordinator = PhotoViewCoordinator(navigationController: navigationController)
+        coordinator.start(withPhoto: photo)
+    }
+    
 }

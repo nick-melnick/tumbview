@@ -20,6 +20,9 @@
 		011149E61F6BBCF400B0067A /* FeedListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011149E51F6BBCF400B0067A /* FeedListCoordinator.swift */; };
 		011149E81F6BBD1300B0067A /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011149E71F6BBD1300B0067A /* FeedListViewController.swift */; };
 		011149EA1F6BBD2A00B0067A /* FeedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011149E91F6BBD2A00B0067A /* FeedListViewModel.swift */; };
+		0119F2361F6D71D40034132C /* PhotoViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119F2351F6D71D40034132C /* PhotoViewCoordinator.swift */; };
+		0119F2381F6D71F40034132C /* PhotoViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119F2371F6D71F40034132C /* PhotoViewViewModel.swift */; };
+		0119F23A1F6D723B0034132C /* PhotoViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119F2391F6D723B0034132C /* PhotoViewViewController.swift */; };
 		014A3B2B1F6A9858001E0028 /* TumblrConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A3B2A1F6A9858001E0028 /* TumblrConnect.swift */; };
 		014A3B2E1F6A993B001E0028 /* CustomURLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A3B2D1F6A993B001E0028 /* CustomURLHandler.swift */; };
 		014A3B301F6A9998001E0028 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A3B2F1F6A9998001E0028 /* Disk.swift */; };
@@ -32,7 +35,6 @@
 		01BBA6B51F6BD32500C670A5 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BBA6B31F6BD32500C670A5 /* PhotoCollectionViewCell.swift */; };
 		01BBA6B61F6BD32500C670A5 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01BBA6B41F6BD32500C670A5 /* PhotoCollectionViewCell.xib */; };
 		01CD22E31F6A6A1B00A15088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD22E21F6A6A1B00A15088 /* AppDelegate.swift */; };
-		01CD22E51F6A6A1B00A15088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CD22E41F6A6A1B00A15088 /* ViewController.swift */; };
 		01CD22E81F6A6A1B00A15088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CD22E61F6A6A1B00A15088 /* Main.storyboard */; };
 		01CD22EA1F6A6A1B00A15088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01CD22E91F6A6A1B00A15088 /* Assets.xcassets */; };
 		01CD22ED1F6A6A1B00A15088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01CD22EB1F6A6A1B00A15088 /* LaunchScreen.storyboard */; };
@@ -67,6 +69,9 @@
 		011149E51F6BBCF400B0067A /* FeedListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListCoordinator.swift; sourceTree = "<group>"; };
 		011149E71F6BBD1300B0067A /* FeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 		011149E91F6BBD2A00B0067A /* FeedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewModel.swift; sourceTree = "<group>"; };
+		0119F2351F6D71D40034132C /* PhotoViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewCoordinator.swift; sourceTree = "<group>"; };
+		0119F2371F6D71F40034132C /* PhotoViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewViewModel.swift; sourceTree = "<group>"; };
+		0119F2391F6D723B0034132C /* PhotoViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewViewController.swift; sourceTree = "<group>"; };
 		014A3B2A1F6A9858001E0028 /* TumblrConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrConnect.swift; sourceTree = "<group>"; };
 		014A3B2D1F6A993B001E0028 /* CustomURLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomURLHandler.swift; sourceTree = "<group>"; };
 		014A3B2F1F6A9998001E0028 /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
@@ -80,7 +85,6 @@
 		01BBA6B41F6BD32500C670A5 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		01CD22DF1F6A6A1B00A15088 /* TumbView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TumbView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01CD22E21F6A6A1B00A15088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01CD22E41F6A6A1B00A15088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		01CD22E71F6A6A1B00A15088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01CD22E91F6A6A1B00A15088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01CD22EC1F6A6A1B00A15088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -162,6 +166,16 @@
 			path = FeedListViewController;
 			sourceTree = "<group>";
 		};
+		0119F2341F6D719F0034132C /* PhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0119F2351F6D71D40034132C /* PhotoViewCoordinator.swift */,
+				0119F2371F6D71F40034132C /* PhotoViewViewModel.swift */,
+				0119F2391F6D723B0034132C /* PhotoViewViewController.swift */,
+			);
+			path = PhotoViewController;
+			sourceTree = "<group>";
+		};
 		014A3B2C1F6A991F001E0028 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,14 +218,14 @@
 		01CD22E11F6A6A1B00A15088 /* TumbView */ = {
 			isa = PBXGroup;
 			children = (
-				010411A21F6BE4ED00CBBA2C /* Persistence */,
-				011149DF1F6B9CBC00B0067A /* SplashScreen */,
-				011149E41F6BBCBA00B0067A /* FeedListViewController */,
-				01CD23021F6A820E00A15088 /* API */,
 				014A3B391F6AA374001E0028 /* Coordinator */,
+				010411A21F6BE4ED00CBBA2C /* Persistence */,
+				01CD23021F6A820E00A15088 /* API */,
+				011149DF1F6B9CBC00B0067A /* SplashScreen */,
+				0119F2341F6D719F0034132C /* PhotoViewController */,
+				011149E41F6BBCBA00B0067A /* FeedListViewController */,
 				01CD22E21F6A6A1B00A15088 /* AppDelegate.swift */,
 				014A3B3A1F6AA39A001E0028 /* AppCoordinator.swift */,
-				01CD22E41F6A6A1B00A15088 /* ViewController.swift */,
 				01CD22E61F6A6A1B00A15088 /* Main.storyboard */,
 				01CD22E91F6A6A1B00A15088 /* Assets.xcassets */,
 				01CD22EB1F6A6A1B00A15088 /* LaunchScreen.storyboard */,
@@ -471,13 +485,14 @@
 				010411AD1F6C055000CBBA2C /* Users+JSON.swift in Sources */,
 				011149E11F6B9CDC00B0067A /* SplashScreenViewController.swift in Sources */,
 				010411B11F6C69D800CBBA2C /* PhotoCollectionViewModel.swift in Sources */,
+				0119F23A1F6D723B0034132C /* PhotoViewViewController.swift in Sources */,
 				014A3B321F6A99F7001E0028 /* TokenCache.swift in Sources */,
+				0119F2381F6D71F40034132C /* PhotoViewViewModel.swift in Sources */,
 				01BBA6B51F6BD32500C670A5 /* PhotoCollectionViewCell.swift in Sources */,
 				014A3B301F6A9998001E0028 /* Disk.swift in Sources */,
 				010411AB1F6BF7DE00CBBA2C /* Blogs+JSON.swift in Sources */,
 				01CD23061F6A828200A15088 /* ProviderOAuth1.swift in Sources */,
 				010411AF1F6C0CC000CBBA2C /* Posts+JSON.swift in Sources */,
-				01CD22E51F6A6A1B00A15088 /* ViewController.swift in Sources */,
 				01CD23041F6A824600A15088 /* TumblrAuth.swift in Sources */,
 				010411A71F6BE65B00CBBA2C /* TumbView.xcdatamodeld in Sources */,
 				011149E61F6BBCF400B0067A /* FeedListCoordinator.swift in Sources */,
@@ -487,6 +502,7 @@
 				010411B61F6C7D6300CBBA2C /* Photos+JSON.swift in Sources */,
 				014A3B3D1F6AAB03001E0028 /* TumblrAPI.swift in Sources */,
 				011149E81F6BBD1300B0067A /* FeedListViewController.swift in Sources */,
+				0119F2361F6D71D40034132C /* PhotoViewCoordinator.swift in Sources */,
 				010411A41F6BE55D00CBBA2C /* CoreDataStack.swift in Sources */,
 				014A3B341F6A9A4F001E0028 /* NotActiveTokenFoundException.swift in Sources */,
 				014A3B2B1F6A9858001E0028 /* TumblrConnect.swift in Sources */,
