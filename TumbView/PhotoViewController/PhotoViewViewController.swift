@@ -72,6 +72,7 @@ class PhotoViewViewController: UIViewController {
             scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
         }
     }
+    
 }
 
 extension PhotoViewViewController: UIScrollViewDelegate {

@@ -8,9 +8,6 @@
 
 import UIKit
 
-import Foundation
-import UIKit
-
 class Coordinator:NSObject {
     
     var childCoordinators: [Coordinator] = []
